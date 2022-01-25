@@ -1,12 +1,11 @@
 import styles from "./index.module.css";
 
-const Settings = ({ setPomodoro, setShort, setLong }) => {
+const Settings = ({ setPomodoro, setShort, setLong, font, setFont, theme, setTheme }) => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
         <h2 className={styles.title}>Settings</h2>
       </div>
-
       <div className={styles.time}>
         <p className={styles.settingHeader}>TIME (MINUTES)</p>
 
@@ -49,22 +48,90 @@ const Settings = ({ setPomodoro, setShort, setLong }) => {
           />
         </div>
       </div>
-
       <div className={styles.font}>
         <p className={styles.settingHeader}>FONT</p>
         <div className={styles.fonts}>
-          <p className={`${styles.kumbh} ${styles.fontImg}`}>Aa</p>
-          <p className={`${styles.roboto} ${styles.fontImg}`}>Aa</p>
-          <p className={`${styles.space} ${styles.fontImg}`}>Aa</p>
+          <input
+            type="radio"
+            className={styles.fontInput}
+            name="font"
+            id="kumbh"
+            checked={font === "kumbh"}
+            onChange={() => {
+              setFont("kumbh");
+            }}
+          />
+          <label className={`${styles.kumbh} ${styles.fontImg}`} htmlFor="kumbh">
+            Aa
+          </label>
+
+          <input
+            type="radio"
+            className={styles.fontInput}
+            name="font"
+            id="roboto"
+            checked={font === "roboto"}
+            onChange={() => {
+              setFont("roboto");
+            }}
+          />
+          <label className={`${styles.roboto} ${styles.fontImg}`} htmlFor="roboto">
+            Aa
+          </label>
+
+          <input
+            type="radio"
+            className={styles.fontInput}
+            name="font"
+            id="space"
+            checked={font === "space"}
+            onChange={() => {
+              setFont("space");
+            }}
+          />
+          <label className={`${styles.space} ${styles.fontImg}`} htmlFor="space">
+            Aa
+          </label>
         </div>
       </div>
-
       <div className={styles.color}>
         <p className={styles.settingHeader}>COLOR</p>
         <div className={styles.colors}>
-          <div className={styles.colorImg}></div>
-          <div className={styles.colorImg}></div>
-          <div className={styles.colorImg}></div>
+          <input
+            type="radio"
+            className={styles.colorInput}
+            name="color"
+            id="red"
+            checked={theme === "red"}
+            onChange={() => {
+              setTheme("red");
+            }}
+          />
+          <label className={`${styles.red} ${styles.colorImg}`} htmlFor="red"></label>
+
+          <input
+            type="radio"
+            className={styles.colorInput}
+            name="color"
+            id="blue"
+            checked={theme === "blue"}
+            onChange={() => {
+              setTheme("blue");
+            }}
+          />
+          <label className={`${styles.blue} ${styles.colorImg}`} htmlFor="blue"></label>
+
+          <input
+            type="radio"
+            className={styles.colorInput}
+            name="color"
+            id="purple"
+            checked={theme === "purple"}
+            onChange={() => {
+              setTheme("purple");
+            }}
+          />
+          <label className={`${styles.purple} ${styles.colorImg}`} htmlFor="purple"></label>
         </div>
       </div>
       <button>Apply</button>

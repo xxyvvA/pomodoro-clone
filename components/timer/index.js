@@ -1,7 +1,7 @@
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import styles from "./index.module.css";
 
-const Timer = ({ time, setTime }) => {
+const Timer = ({ time, setTime, font, theme }) => {
   let intervalId = useRef(null);
 
   useEffect(() => {
@@ -16,10 +16,7 @@ const Timer = ({ time, setTime }) => {
         {Math.floor(time / 60)
           .toString()
           .padStart(2, "0")}
-        :
-        {Math.floor(time % 60)
-          .toString()
-          .padStart(2, "0")}
+        :{(time % 60).toString().padStart(2, "0")}
       </p>
 
       <button
@@ -31,7 +28,7 @@ const Timer = ({ time, setTime }) => {
           }
         }}
       >
-        PLAY RESTART PAUSE
+        START
       </button>
     </div>
   );
