@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Home.module.scss";
 import Head from "../components/Head";
 import Radio from "../components/radio";
 import Timer from "../components/timer";
@@ -13,6 +13,7 @@ export default function Home() {
   const [long, setLong] = useState(0);
   const [font, setFont] = useState("kumbh");
   const [theme, setTheme] = useState("red");
+  const [open, setOpen] = useState(false);
 
   return (
     <>
@@ -43,7 +44,16 @@ export default function Home() {
         setFont={setFont}
         theme={theme}
         setTheme={setTheme}
+        open={open}
+        setOpen={setOpen}
       />
+      <button
+        onClick={() => {
+          setOpen(true);
+        }}
+      >
+        Open
+      </button>
     </>
   );
 }
