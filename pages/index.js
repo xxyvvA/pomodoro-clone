@@ -8,17 +8,20 @@ import Settings from "../components/settings";
 
 export default function Home() {
   const [radio, setRadio] = useState("pomodoro");
-  const [pomodoro, setPomodoro] = useState(0);
-  const [short, setShort] = useState(0);
-  const [long, setLong] = useState(0);
+  const [pomodoro, setPomodoro] = useState(25 * 60);
+  const [short, setShort] = useState(5 * 60);
+  const [long, setLong] = useState(15 * 60);
   const [font, setFont] = useState("kumbh");
   const [theme, setTheme] = useState("red");
   const [open, setOpen] = useState(false);
+  const [userPom, setUserPom] = useState(0);
+  const [userShort, setUserShort] = useState(0);
+  const [userLong, setUserLong] = useState(0);
 
   return (
     <>
       <Head title={"Pomodoro Clone"} />
-      <h1>pomodoro</h1>
+      <h1 className="main-timer">pomodoro</h1>
       <Radio radio={radio} setRadio={setRadio} font={font} theme={theme} />
       <Timer
         time={
@@ -33,6 +36,15 @@ export default function Home() {
             ? setLong
             : 0
         }
+        timeRatio={
+          radio === "pomodoro"
+            ? userPom
+            : radio === "short"
+            ? userShort
+            : radio === "long"
+            ? userLong
+            : null
+        }
         font={font}
         theme={theme}
       />
@@ -46,6 +58,12 @@ export default function Home() {
         setTheme={setTheme}
         open={open}
         setOpen={setOpen}
+        userPom={userPom}
+        setUserPom={setUserPom}
+        userShort={userShort}
+        setUserShort={setUserShort}
+        userLong={userLong}
+        setUserLong={setUserLong}
       />
       <button
         onClick={() => {

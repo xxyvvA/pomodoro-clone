@@ -1,5 +1,5 @@
 .container {
-  @apply relative flex flex-col  bg-white w-[327px] h-[550px] md:w-[540px] md:h-[464px] border rounded-[15px];
+  @apply absolute z-20 top-[46px] flex flex-col  bg-white w-[327px] h-[550px] md:w-[540px] md:h-[464px] border rounded-[15px];
 
   .header {
     @apply flex justify-between items-center border-b border-darkwhite py-[21px] px-[23px] md:py-[26px] md:px-[40px];

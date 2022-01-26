@@ -1,8 +1,22 @@
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
+import clsx from "clsx";
 
-const Radio = ({ radio, setRadio }) => {
+const Radio = ({ radio, setRadio, font, theme }) => {
   return (
-    <div className={styles.container}>
+    <div
+      className={clsx(
+        styles.container,
+        styles[
+          font === "kumbh"
+            ? "kumbh"
+            : font === "roboto"
+            ? "roboto"
+            : font === "space"
+            ? "space"
+            : null
+        ]
+      )}
+    >
       <input
         type="radio"
         name="pomodoro"
@@ -12,7 +26,17 @@ const Radio = ({ radio, setRadio }) => {
           setRadio("pomodoro");
         }}
       />
-      <label htmlFor="pomodoro">pomodoro</label>
+      <label
+        className={clsx(
+          styles.label,
+          styles[
+            theme === "red" ? "red" : theme === "blue" ? "blue" : theme === "pink" ? "pink" : null
+          ]
+        )}
+        htmlFor="pomodoro"
+      >
+        pomodoro
+      </label>
 
       <input
         type="radio"
@@ -23,7 +47,17 @@ const Radio = ({ radio, setRadio }) => {
           setRadio("short");
         }}
       />
-      <label htmlFor="short-break">short break</label>
+      <label
+        className={clsx(
+          styles.label,
+          styles[
+            theme === "red" ? "red" : theme === "blue" ? "blue" : theme === "pink" ? "pink" : null
+          ]
+        )}
+        htmlFor="short-break"
+      >
+        short break
+      </label>
 
       <input
         type="radio"
@@ -34,7 +68,17 @@ const Radio = ({ radio, setRadio }) => {
           setRadio("long");
         }}
       />
-      <label htmlFor="long-break">long break</label>
+      <label
+        className={clsx(
+          styles.label,
+          styles[
+            theme === "red" ? "red" : theme === "blue" ? "blue" : theme === "pink" ? "pink" : null
+          ]
+        )}
+        htmlFor="long-break"
+      >
+        long break
+      </label>
     </div>
   );
 };

@@ -1,0 +1,37 @@
+.container {
+  @apply relative flex justify-center items-center mt-[50px];
+}
+
+.content-container {
+  @apply w-[300px] h-[300px] rounded-[50%] flex justify-center items-center;
+  background: linear-gradient(315deg, #2e325a 0%, #0e112a 99.93%);
+  box-shadow: -50px -50px 100px #272c5a, 50px 50px 100px #121530;
+}
+
+.crater {
+  @apply w-[267.8px] h-[267.8px] bg-darkbg rounded-[50%] flex justify-center items-center;
+}
+
+.progressBar {
+  @apply rotate-[-90deg];
+}
+
+.time {
+  @apply absolute text-[80px] text-white flex flex-col;
+
+  button {
+    @apply text-[14px] tracking-[13.13px] mr-[-24px];
+  }
+}
+
+.time.kumbh {
+  @apply font-kumbh tracking-[-4px] mr-[4px];
+}
+
+.time.roboto {
+  @apply font-roboto;
+}
+
+.time.space {
+  @apply font-space tracking-[-10px] mr-[10px] leading-none;
+}

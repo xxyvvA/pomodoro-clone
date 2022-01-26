@@ -13,13 +13,15 @@ const Settings = ({
   setTheme,
   open,
   setOpen,
+  userPom,
+  setUserPom,
+  userShort,
+  setUserShort,
+  userLong,
+  setUserLong,
 }) => {
   const [fonts, setFonts] = useState(font);
   const [colors, setColors] = useState(theme);
-  let pomodoro = useRef(0);
-  let short = useRef(0);
-  let long = useRef(0);
-
   const ref = useRef(null);
   const [mounted, setMounted] = useState(false);
 
@@ -56,8 +58,8 @@ const Settings = ({
               }}
             >
               <g>
-                <path stroke-width="2" stroke="black" d="M1.344,1.344 L12.656,12.656" />
-                <path stroke-width="2" stroke="black" d="M12.656,1.344 L1.344,12.656" />
+                <path strokeWidth="2" stroke="black" d="M1.344,1.344 L12.656,12.656" />
+                <path strokeWidth="2" stroke="black" d="M12.656,1.344 L1.344,12.656" />
               </g>
             </svg>
           </div>
@@ -72,7 +74,7 @@ const Settings = ({
                   placeholder="25"
                   id="pomodoro"
                   onChange={(event) => {
-                    pomodoro.current = event.target.value * 60;
+                    setUserPom(event.target.value * 60);
                   }}
                 />
               </div>
@@ -85,7 +87,7 @@ const Settings = ({
                   placeholder="5"
                   id="short-break"
                   onChange={(event) => {
-                    short.current = event.target.value * 60;
+                    setUserShort(event.target.value * 60);
                   }}
                 />
               </div>
@@ -98,7 +100,7 @@ const Settings = ({
                   placeholder="15"
                   id="long-break"
                   onChange={(event) => {
-                    long.current = event.target.value * 60;
+                    setUserLong(event.target.value * 60);
                   }}
                 />
               </div>
@@ -169,7 +171,7 @@ const Settings = ({
                 {colors === "red" && (
                   <svg width="14" height="11">
                     <g>
-                      <path fill="none" stroke-width="2" stroke="black" d="M1,6 L5,9.5 L13,1" />
+                      <path fill="none" strokeWidth="2" stroke="black" d="M1,6 L5,9.5 L13,1" />
                     </g>
                   </svg>
                 )}
@@ -189,7 +191,7 @@ const Settings = ({
                 {colors === "blue" && (
                   <svg width="14" height="11">
                     <g>
-                      <path fill="none" stroke-width="2" stroke="black" d="M1,6 L5,9.5 L13,1" />
+                      <path fill="none" strokeWidth="2" stroke="black" d="M1,6 L5,9.5 L13,1" />
                     </g>
                   </svg>
                 )}
@@ -209,7 +211,7 @@ const Settings = ({
                 {colors === "pink" && (
                   <svg width="14" height="11">
                     <g>
-                      <path fill="none" stroke-width="2" stroke="black" d="M1,6 L5,9.5 L13,1" />
+                      <path fill="none" strokeWidth="2" stroke="black" d="M1,6 L5,9.5 L13,1" />
                     </g>
                   </svg>
                 )}
@@ -231,9 +233,9 @@ const Settings = ({
             onClick={() => {
               setFont(fonts);
               setTheme(colors);
-              setPomodoro(pomodoro.current);
-              setShort(short.current);
-              setLong(long.current);
+              setPomodoro(userPom);
+              setShort(userShort);
+              setLong(userLong);
             }}
           >
             Apply

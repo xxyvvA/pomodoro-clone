@@ -1,0 +1,35 @@
+.container {
+  @apply relative z-10 bg-darkbg text-[10px] w-[327px] h-[63px] flex justify-between items-center px-[6.14px] py-[7px] rounded-[31.5px];
+
+  input {
+    @apply absolute opacity-0 w-0;
+  }
+
+  input[type="radio"]:checked + .label.red {
+    @apply bg-red text-background;
+  }
+
+  input[type="radio"]:checked + .label.blue {
+    @apply bg-lightblue text-background;
+  }
+
+  input[type="radio"]:checked + .label.pink {
+    @apply bg-pink text-background;
+  }
+}
+
+.label {
+  @apply px-[20px] py-[15px] text-darkwhite rounded-[26.5px];
+}
+
+.container.kumbh {
+  @apply font-kumbh;
+}
+
+.container.roboto {
+  @apply font-roboto;
+}
+
+.container.space {
+  @apply font-space;
+}
