@@ -13,9 +13,9 @@ module.exports = {
     },
 
     fontFamily: {
-      Kumbh: "Kumbh Sans",
-      Roboto: "Roboto Slab",
-      Space: "Space Mono",
+      kumbh: "Kumbh Sans",
+      roboto: "Roboto Slab",
+      space: "Space Mono",
     },
 
     extend: {},

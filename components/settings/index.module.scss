@@ -1,0 +1,120 @@
+.container {
+  @apply relative flex flex-col  bg-white w-[327px] h-[550px] md:w-[540px] md:h-[464px] border rounded-[15px];
+
+  .header {
+    @apply flex justify-between items-center border-b border-darkwhite py-[21px] px-[23px] md:py-[26px] md:px-[40px];
+
+    .title {
+      @apply text-[20px] text-darkbg md:text-[28px];
+    }
+  }
+
+  .time {
+    @apply flex flex-col items-center md:items-stretch  mx-[23px] border-b border-darkwhite py-[24px];
+
+    .times {
+      @apply flex flex-col w-full gap-[8px];
+
+      .input {
+        @apply flex justify-between items-center;
+
+        .timeTitle {
+          @apply text-darkbg text-[12px];
+        }
+
+        .timeInput {
+          @apply w-[140px] h-[40px] bg-darkwhite rounded-[10px] px-[16px] text-[14px] text-darkbg;
+        }
+      }
+    }
+  }
+
+  .font {
+    @apply flex flex-col items-center mx-[23px] border-b border-darkwhite py-[24px];
+
+    .fonts {
+      @apply flex flex-row gap-[16px];
+
+      .input:checked + label {
+        @apply bg-darkbg text-white;
+      }
+
+      .fontImg {
+        @apply text-[15px]  text-background w-[40px] h-[40px] bg-darkwhite rounded-[50%] flex justify-center items-center;
+      }
+
+      .kumbh {
+        @apply font-kumbh;
+      }
+
+      .roboto {
+        @apply font-roboto;
+      }
+
+      .space {
+        @apply font-space;
+      }
+    }
+  }
+
+  .color {
+    @apply flex flex-col items-center mx-[23px] py-[16px];
+
+    .colors {
+      @apply flex flex-row gap-[16px];
+
+      .colorImg {
+        @apply w-[40px] h-[40px] rounded-[50%] flex justify-center items-center;
+      }
+
+      .red {
+        @apply bg-red;
+      }
+
+      .blue {
+        @apply bg-lightblue;
+      }
+
+      .pink {
+        @apply bg-pink;
+      }
+    }
+  }
+
+  button {
+    @apply absolute bottom-[-26.5px] w-[140px] h-[53px] self-center rounded-[25.5px] text-white text-[16px];
+  }
+
+  button.red {
+    @apply bg-red;
+  }
+
+  button.blue {
+    @apply bg-lightblue;
+  }
+
+  button.pink {
+    @apply bg-pink;
+  }
+}
+
+.container.kumbh {
+  @apply font-kumbh;
+}
+
+.container.roboto {
+  @apply font-roboto;
+}
+
+.container.space {
+  @apply font-space;
+}
+
+.font .input,
+.color .input {
+  @apply absolute opacity-0 w-0;
+}
+
+.settingHeader {
+  @apply text-[11px] h-[14px] text-darkbg md:text-[13px] tracking-[4.23px] mb-[15px] md:tracking-[5px];
+}
