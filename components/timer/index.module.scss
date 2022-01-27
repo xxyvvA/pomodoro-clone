@@ -19,8 +19,8 @@
 .time {
   @apply absolute text-[80px] text-white flex flex-col;
 
-  button {
-    @apply text-[14px] tracking-[13.13px] mr-[-24px];
+  :last-child {
+    @apply text-[14px] text-center tracking-[13.13px] mr-[-24px];
   }
 }
 

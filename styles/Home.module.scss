@@ -1,3 +1,11 @@
 .container {
   @apply flex flex-col items-center;
 }
+
+.main-timer {
+  @apply font-kumbh text-[24px] text-center mt-[32px] mb-[45px] text-darkwhite;
+}
+
+.open-settings {
+  @apply mt-20;
+}

@@ -1,18 +1,44 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import styles from "./index.module.scss";
 import clsx from "clsx";
 
 const Timer = ({ time, setTime, timeRatio, font, theme }) => {
+  const [running, setRunning] = useState(false);
   let intervalId = useRef(null);
 
   useEffect(() => {
     if (time === 0) {
       clearInterval(intervalId.current);
     }
-  });
+  }, [time]);
+
+  useEffect(() => {
+    if (timeRatio > 0) {
+      clearInterval(intervalId.current);
+      setRunning(false);
+      setTime(timeRatio);
+    }
+  }, [timeRatio]);
 
   return (
-    <div className={styles.container}>
+    <button
+      className={styles.container}
+      onClick={() => {
+        if (time > 0) {
+          if (running) {
+            setRunning(false);
+            return clearInterval(intervalId.current);
+          }
+          setRunning(true);
+          intervalId.current = setInterval(() => {
+            setTime((time) => time - 1);
+          }, 1000);
+        } else {
+          setRunning(false);
+          setTime(timeRatio);
+        }
+      }}
+    >
       <div className={styles["content-container"]}>
         <div className={styles.crater}>
           <svg className={styles.progressBar} width="248.05" height="248.05">
@@ -60,19 +86,9 @@ const Timer = ({ time, setTime, timeRatio, font, theme }) => {
           :{(time % 60).toString().padStart(2, "0")}
         </p>
 
-        <button
-          onClick={() => {
-            if (time > 0) {
-              intervalId.current = setInterval(() => {
-                setTime((time) => time - 1);
-              }, 1000);
-            }
-          }}
-        >
-          START
-        </button>
+        <p>{time <= 0 ? "RESET" : running ? "PAUSE" : "START"}</p>
       </div>
-    </div>
+    </button>
   );
 };
 

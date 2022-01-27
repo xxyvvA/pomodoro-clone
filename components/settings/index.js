@@ -236,6 +236,7 @@ const Settings = ({
               setPomodoro(userPom);
               setShort(userShort);
               setLong(userLong);
+              setOpen(false);
             }}
           >
             Apply
