@@ -14,9 +14,9 @@ export default function Home() {
   const [font, setFont] = useState("kumbh");
   const [theme, setTheme] = useState("red");
   const [open, setOpen] = useState(false);
-  const [userPom, setUserPom] = useState(0);
-  const [userShort, setUserShort] = useState(0);
-  const [userLong, setUserLong] = useState(0);
+  const [userPom, setUserPom] = useState(25 * 60);
+  const [userShort, setUserShort] = useState(5 * 60);
+  const [userLong, setUserLong] = useState(15 * 60);
 
   return (
     <>

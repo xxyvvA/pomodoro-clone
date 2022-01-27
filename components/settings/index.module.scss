@@ -1,8 +1,8 @@
 .container {
-  @apply absolute z-20 top-[46px] flex flex-col  bg-white w-[327px] h-[550px] md:w-[540px] md:h-[464px] border rounded-[15px];
+  @apply absolute z-20 top-[46px] md:top-[120px] flex flex-col  bg-white w-[327px] md:w-[540px]  border rounded-[15px];
 
   .header {
-    @apply flex justify-between items-center border-b border-darkwhite py-[21px] px-[23px] md:py-[26px] md:px-[40px];
+    @apply flex justify-between items-center border-b border-darkwhite py-[21px] px-[23px] md:py-[26px];
 
     .title {
       @apply text-[20px] text-darkbg md:text-[28px];
@@ -30,10 +30,10 @@
   @apply flex flex-col items-center md:items-stretch  mx-[23px] border-b border-darkwhite py-[24px];
 
   .times {
-    @apply flex flex-col w-full gap-[8px];
+    @apply flex flex-col md:flex-row md:justify-between w-full gap-[8px];
 
     .input {
-      @apply flex justify-between items-center;
+      @apply flex md:flex-col justify-between  items-center md:items-start md:mt-6;
 
       .timeTitle {
         @apply text-darkbg text-[12px];
@@ -47,7 +47,7 @@
 }
 
 .font {
-  @apply flex flex-col items-center mx-[23px] border-b border-darkwhite py-[24px];
+  @apply flex flex-col md:flex-row md:justify-between items-center mx-[23px] border-b border-darkwhite py-[24px];
 
   .fonts {
     @apply flex flex-row gap-[16px];
@@ -75,7 +75,7 @@
 }
 
 .color {
-  @apply flex flex-col items-center mx-[23px] py-[16px];
+  @apply flex flex-col md:flex-row md:justify-between items-center mx-[23px] pt-4 pb-16;
 
   .colors {
     @apply flex flex-row gap-[16px];
@@ -120,5 +120,5 @@
 }
 
 .settingHeader {
-  @apply text-[11px] h-[14px] text-darkbg md:text-[13px] tracking-[4.23px] mb-[15px] md:tracking-[5px];
+  @apply text-[11px] h-[14px] text-darkbg md:text-[13px] tracking-[4.23px] mb-[15px] md:mb-0 md:tracking-[5px];
 }

@@ -1,13 +1,16 @@
 import { useRef, useEffect, useState } from "react";
 import styles from "./index.module.scss";
 import clsx from "clsx";
+import useSound from "use-sound";
 
 const Timer = ({ time, setTime, timeRatio, font, theme }) => {
   const [running, setRunning] = useState(false);
+  const [playSound] = useSound("/sound/alarm.mp3");
   let intervalId = useRef(null);
 
   useEffect(() => {
     if (time === 0) {
+      playSound();
       clearInterval(intervalId.current);
     }
   }, [time]);
@@ -41,7 +44,7 @@ const Timer = ({ time, setTime, timeRatio, font, theme }) => {
     >
       <div className={styles["content-container"]}>
         <div className={styles.crater}>
-          <svg className={styles.progressBar} width="248.05" height="248.05">
+          <svg className={styles.progressBar}>
             <circle
               fill="none"
               strokeWidth="11"
@@ -55,11 +58,23 @@ const Timer = ({ time, setTime, timeRatio, font, theme }) => {
                   : null
               }
               strokeLinecap="round"
-              cx="124.25"
-              cy="124.25"
-              r="118.025"
-              strokeDasharray={Math.PI * 118.025 * 2}
               strokeDashoffset={Math.PI * 2 * 118.025 * (time / timeRatio)}
+            />
+
+            <circle
+              fill="none"
+              strokeWidth="11"
+              stroke={
+                theme === "red"
+                  ? "#F87070"
+                  : theme === "blue"
+                  ? "#70F3F8"
+                  : theme === "pink"
+                  ? "#D881F8"
+                  : null
+              }
+              strokeLinecap="round"
+              strokeDashoffset={Math.PI * 2 * 161 * (time / timeRatio)}
             />
           </svg>
         </div>

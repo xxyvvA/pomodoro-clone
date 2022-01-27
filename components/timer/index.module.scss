@@ -3,17 +3,42 @@
 }
 
 .content-container {
-  @apply w-[300px] h-[300px] rounded-[50%] flex justify-center items-center;
+  @apply w-[300px] md:w-[410px] h-[300px] md:h-[410px] rounded-full flex justify-center items-center;
   background: linear-gradient(315deg, #2e325a 0%, #0e112a 99.93%);
   box-shadow: -50px -50px 100px #272c5a, 50px 50px 100px #121530;
 }
 
 .crater {
-  @apply w-[267.8px] h-[267.8px] bg-darkbg rounded-[50%] flex justify-center items-center;
+  @apply w-[267.8px] md:w-[366px] h-[267.8px] md:h-[366px] bg-darkbg rounded-[50%] flex justify-center items-center;
 }
 
 .progressBar {
-  @apply rotate-[-90deg];
+  @apply rotate-[-90deg]  w-[248px] h-[248px] md:w-[339px] md:h-[339px];
+
+  circle {
+    cx: 124.25px;
+    cy: 124.25px;
+    r: 118.025px;
+    stroke-dasharray: calc(3.141492654 * 118.025 * 2);
+    &:last-child {
+      display: none;
+    }
+    @media screen and (min-width: 768px) {
+      cx: 169px;
+      cy: 169px;
+      r: 161px;
+
+      stroke-dasharray: calc(3.141492654 * 161px * 2);
+
+      &:first-child {
+        display: none;
+      }
+
+      &:last-child {
+        display: block;
+      }
+    }
+  }
 }
 
 .time {

@@ -1,5 +1,5 @@
 .container {
-  @apply relative z-10 bg-darkbg text-[10px] w-[327px] h-[63px] flex justify-between items-center px-[6.14px] py-[7px] rounded-[31.5px];
+  @apply relative z-10 bg-darkbg text-[10px] md:text-[13px] w-[327px] md:w-[373px] h-[63px] flex justify-between items-center px-[6.14px] py-[7px] rounded-[31.5px];
 
   input {
     @apply absolute opacity-0 w-0;
