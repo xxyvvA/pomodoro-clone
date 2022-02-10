@@ -9,7 +9,7 @@ const Timer = ({ time, setTime, timeRatio, font, theme }) => {
   let intervalId = useRef(null);
 
   useEffect(() => {
-    if (time === 0) {
+    if (time <= 0) {
       playSound();
       clearInterval(intervalId.current);
     }
